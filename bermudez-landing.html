@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bermúdez Constructores — Socio Legal, Financiero y Constructivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --negro: #0a0a0a;
+  --amarillo: #F5C200;
+  --amarillo-oscuro: #C49A00;
+  --gris-oscuro: #1a1a1a;
+  --gris-medio: #2e2e2e;
+  --gris-claro: #888;
+  --blanco: #f5f4f0;
+  --rojo-urgencia: #D94F3D;
+  --acero: #3a4a5c;
+  --acero-claro: #5a7a9c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── UTILITY ─────────────────────────────── */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.tag {
+  display: inline-block;
+  background: var(--amarillo);
+  color: var(--negro);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.tag.rojo { background: var(--rojo-urgencia); color: #fff; }
+.tag.acero { background: var(--acero); color: var(--amarillo); }
+
+/* ─── NAVBAR ─────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(245,194,0,0.15);
+  padding: 14px 0;
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: var(--blanco);
+}
+.logo span { color: var(--amarillo); }
+.nav-cta {
+  background: var(--amarillo);
+  color: var(--negro);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--amarillo-oscuro); }
+
+/* ─── HERO ─────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--negro);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245,194,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,194,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-diagonal {
+  position: absolute;
+  right: -120px;
+  top: 0; bottom: 0;
+  width: 55%;
+  background: var(--gris-oscuro);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+.hero-diagonal::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5C200' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+.hero-left { padding: 60px 0; }
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--amarillo);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--amarillo);
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+  color: var(--blanco);
+}
+h1 em {
+  color: var(--amarillo);
+  font-style: normal;
+  display: block;
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(245,244,240,0.75);
+  margin-bottom: 40px;
+  max-width: 460px;
+  line-height: 1.7;
+}
+.hero-sub strong { color: var(--blanco); font-weight: 600; }
+
+.btn-primary {
+  display: inline-block;
+  background: var(--amarillo);
+  color: var(--negro);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  text-decoration: none;
+  margin-right: 16px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn-primary::after {
+  content: ' →';
+}
+.btn-primary:hover {
+  background: var(--amarillo-oscuro);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  display: inline-block;
+  border: 1.5px solid rgba(245,244,240,0.3);
+  color: var(--blanco);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 17px 28px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--amarillo); color: var(--amarillo); }
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 52px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(245,244,240,0.1);
+}
+.stat-item { text-align: left; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--amarillo);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--gris-claro);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* HERO RIGHT - Selector de perfil */
+.hero-right { position: relative; z-index: 2; }
+.profile-selector {
+  background: var(--gris-oscuro);
+  border: 1px solid rgba(245,194,0,0.2);
+  padding: 36px;
+}
+.profile-selector h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  margin-bottom: 24px;
+}
+.profile-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 1.5px solid transparent;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: rgba(255,255,255,0.02);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.profile-card:hover, .profile-card.active {
+  border-color: var(--amarillo);
+  background: rgba(245,194,0,0.05);
+}
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.profile-icon {
+  width: 42px; height: 42px;
+  background: var(--amarillo);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.profile-card h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--blanco);
+}
+.profile-card p {
+  font-size: 13px;
+  color: rgba(245,244,240,0.6);
+  line-height: 1.5;
+  padding-left: 56px;
+}
+.urgency-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  background: var(--rojo-urgencia);
+  color: #fff;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ─── BAND: DOLOR ─────────────────────────── */
+#dolor-band {
+  background: var(--rojo-urgencia);
+  padding: 18px 0;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 3px;
+  color: #fff;
+  opacity: 0.9;
+}
+.marquee-sep { color: rgba(255,255,255,0.4); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTION HEADERS ─────────────────────── */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.section-title em { color: var(--amarillo); font-style: normal; }
+.section-sub {
+  font-size: 17px;
+  color: rgba(245,244,240,0.65);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ─── USP / DIFERENCIADOR ─────────────────── */
+#usp {
+  padding: 100px 0;
+  background: var(--gris-oscuro);
+  position: relative;
+  overflow: hidden;
+}
+#usp::before {
+  content: 'INTEGRADOR';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 220px;
+  letter-spacing: -5px;
+  color: rgba(245,194,0,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.usp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.usp-left .section-title { margin-bottom: 24px; }
+.usp-left p {
+  font-size: 17px;
+  color: rgba(245,244,240,0.7);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.usp-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.compare-bad {
+  background: rgba(217,79,61,0.1);
+  border: 1px solid rgba(217,79,61,0.25);
+  padding: 10px 14px;
+  color: rgba(245,244,240,0.5);
+  text-decoration: line-through;
+}
+.compare-vs {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  color: var(--gris-claro);
+  letter-spacing: 2px;
+  text-align: center;
+}
+.compare-good {
+  background: rgba(245,194,0,0.08);
+  border: 1px solid rgba(245,194,0,0.25);
+  padding: 10px 14px;
+  color: var(--amarillo);
+  font-weight: 600;
+}
+.usp-right { display: flex; flex-direction: column; gap: 20px; }
+.usp-card {
+  background: var(--negro);
+  border-left: 3px solid var(--amarillo);
+  padding: 24px 26px;
+}
+.usp-card h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--amarillo);
+}
+.usp-card p { font-size: 14px; color: rgba(245,244,240,0.7); line-height: 1.6; }
+
+/* ─── SEGMENTOS ─────────────────────────────── */
+#segmentos { padding: 100px 0; background: var(--negro); }
+
+.segmentos-intro { text-align: center; margin-bottom: 70px; }
+.segmentos-intro .section-sub { margin: 0 auto; }
+
+.segmentos-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--gris-medio);
+}
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 18px 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.tab-btn.active, .tab-btn:hover {
+  color: var(--amarillo);
+  border-bottom-color: var(--amarillo);
+}
+.tab-icon { font-size: 18px; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.segment-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--gris-medio);
+  margin-top: 0;
+}
+.segment-left {
+  padding: 52px;
+  background: var(--gris-oscuro);
+}
+.segment-right {
+  padding: 52px;
+  background: var(--negro);
+  border-left: 1px solid var(--gris-medio);
+}
+.segment-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: var(--blanco);
+}
+.segment-title span { color: var(--amarillo); }
+.segment-tagline {
+  font-size: 13px;
+  color: var(--gris-claro);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.pain-list {
+  list-style: none;
+  margin-bottom: 36px;
+}
+.pain-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 15px;
+  color: rgba(245,244,240,0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+.pain-list li::before {
+  content: '→';
+  color: var(--rojo-urgencia);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.benefit-list { list-style: none; margin-bottom: 36px; }
+.benefit-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 15px;
+  color: rgba(245,244,240,0.8);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+.benefit-list li::before {
+  content: '✓';
+  color: var(--amarillo);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.segment-highlight {
+  background: rgba(245,194,0,0.08);
+  border: 1px solid rgba(245,194,0,0.2);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.segment-highlight p {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--amarillo);
+  line-height: 1.6;
+}
+.segment-highlight strong {
+  display: block;
+  font-size: 13px;
+  font-style: normal;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,244,240,0.5);
+  margin-top: 8px;
+}
+
+/* ─── LEAD MAGNET ─────────────────────────── */
+#lead-magnet {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--amarillo) 0%, #e6b000 100%);
+  position: relative;
+  overflow: hidden;
+}
+#lead-magnet::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230a0a0a' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+.lead-magnet-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+}
+.lm-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1;
+  color: var(--negro);
+  margin-bottom: 16px;
+}
+.lm-left p {
+  font-size: 17px;
+  color: rgba(10,10,10,0.75);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.lm-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lm-includes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--negro);
+}
+.lm-includes li::before {
+  content: '▶';
+  font-size: 10px;
+  color: var(--negro);
+  opacity: 0.6;
+}
+.lm-form {
+  background: var(--negro);
+  padding: 40px;
+}
+.lm-form h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--amarillo);
+  margin-bottom: 8px;
+}
+.lm-form p {
+  font-size: 13px;
+  color: var(--gris-claro);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.form-field {
+  margin-bottom: 16px;
+}
+.form-field input, .form-field select {
+  width: 100%;
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: 0;
+  padding: 14px 16px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  color: var(--blanco);
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-field select option { background: var(--gris-oscuro); }
+.form-field input:focus, .form-field select:focus {
+  border-color: var(--amarillo);
+}
+.form-field input::placeholder { color: rgba(245,244,240,0.3); }
+.btn-submit {
+  width: 100%;
+  background: var(--amarillo);
+  color: var(--negro);
+  border: none;
+  padding: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--amarillo-oscuro); }
+.form-guarantee {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(245,244,240,0.4);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* ─── SERVICIOS ─────────────────────────────── */
+#servicios { padding: 100px 0; background: var(--gris-oscuro); }
+.servicios-header { text-align: center; margin-bottom: 64px; }
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.servicio-card {
+  background: var(--negro);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.servicio-card:hover { transform: translateY(-4px); }
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--amarillo);
+}
+.servicio-card.urgente::before { background: var(--rojo-urgencia); }
+.servicio-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: rgba(245,194,0,0.06);
+  position: absolute;
+  top: 10px; right: 20px;
+  line-height: 1;
+}
+.servicio-icon { font-size: 36px; margin-bottom: 18px; }
+.servicio-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  color: var(--blanco);
+}
+.servicio-card p {
+  font-size: 14px;
+  color: rgba(245,244,240,0.65);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.servicio-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.servicio-bullets li {
+  font-size: 13px;
+  color: rgba(245,244,240,0.6);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.servicio-bullets li::before {
+  content: '–';
+  color: var(--amarillo);
+  flex-shrink: 0;
+}
+.servicio-card.urgente .servicio-bullets li::before {
+  color: var(--rojo-urgencia);
+}
+
+/* ─── PRUEBA SOCIAL ─────────────────────────── */
+#social { padding: 100px 0; background: var(--negro); }
+.social-header { text-align: center; margin-bottom: 64px; }
+.proof-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 64px;
+}
+.proof-num-card {
+  background: var(--gris-oscuro);
+  padding: 40px 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--amarillo);
+}
+.proof-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  color: var(--amarillo);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.proof-desc {
+  font-size: 13px;
+  color: rgba(245,244,240,0.55);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 64px;
+}
+.testimonial {
+  background: var(--gris-oscuro);
+  padding: 36px;
+  position: relative;
+}
+.quote-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: var(--amarillo);
+  line-height: 0.7;
+  opacity: 0.4;
+  margin-bottom: 12px;
+  display: block;
+}
+.testimonial p {
+  font-size: 16px;
+  color: rgba(245,244,240,0.85);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.author-avatar {
+  width: 46px; height: 46px;
+  background: var(--amarillo);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--negro);
+  flex-shrink: 0;
+}
+.author-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blanco);
+}
+.author-info span {
+  font-size: 12px;
+  color: var(--gris-claro);
+  letter-spacing: 0.5px;
+}
+.client-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.client-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: rgba(245,244,240,0.2);
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ─── CASOS DE ÉXITO ─────────────────────────── */
+#casos { padding: 100px 0; background: var(--gris-oscuro); }
+.casos-header { text-align: center; margin-bottom: 64px; }
+.casos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.caso-card {
+  background: var(--negro);
+  padding: 36px;
+  border-top: 3px solid var(--amarillo);
+}
+.caso-card.rojo { border-top-color: var(--rojo-urgencia); }
+.caso-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  margin-bottom: 16px;
+}
+.caso-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  color: var(--blanco);
+}
+.caso-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 13px;
+}
+.metric-label { color: rgba(245,244,240,0.5); }
+.metric-value { color: var(--amarillo); font-weight: 600; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 0.5px; }
+.caso-card.rojo .metric-value { color: #ef8f83; }
+.caso-result {
+  background: rgba(245,194,0,0.07);
+  border-left: 2px solid var(--amarillo);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: rgba(245,244,240,0.75);
+  line-height: 1.6;
+}
+.caso-card.rojo .caso-result {
+  background: rgba(217,79,61,0.07);
+  border-left-color: var(--rojo-urgencia);
+}
+
+/* ─── PROCESO ─────────────────────────────── */
+#proceso { padding: 100px 0; background: var(--negro); }
+.proceso-header { text-align: center; margin-bottom: 64px; }
+.proceso-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--gris-medio);
+  margin-bottom: 48px;
+  justify-content: center;
+}
+.proceso-tab {
+  background: none;
+  border: none;
+  padding: 14px 32px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+}
+.proceso-tab.active { color: var(--amarillo); border-bottom-color: var(--amarillo); }
+.proceso-content { display: none; }
+.proceso-content.active { display: block; }
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.proceso-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--amarillo), var(--amarillo-oscuro));
+}
+.step {
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+.step-num {
+  width: 56px; height: 56px;
+  background: var(--amarillo);
+  color: var(--negro);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
+.step.urgente .step-num { background: var(--rojo-urgencia); color: #fff; }
+.step h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blanco);
+  margin-bottom: 10px;
+}
+.step p {
+  font-size: 13px;
+  color: rgba(245,244,240,0.55);
+  line-height: 1.6;
+}
+.step-time {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--amarillo);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.step.urgente .step-time { color: var(--rojo-urgencia); }
+
+/* ─── CTA CENTRAL ─────────────────────────── */
+#cta-mid {
+  padding: 80px 0;
+  background: var(--amarillo);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta-mid::before {
+  content: 'BERMÚDEZ';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 280px;
+  color: rgba(10,10,10,0.04);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+#cta-mid h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--negro);
+  margin-bottom: 16px;
+  line-height: 1;
+  position: relative;
+}
+#cta-mid p {
+  font-size: 18px;
+  color: rgba(10,10,10,0.65);
+  margin-bottom: 36px;
+  max-width: 560px;
+  margin-left: auto; margin-right: auto;
+  line-height: 1.6;
+  position: relative;
+}
+.btn-dark {
+  display: inline-block;
+  background: var(--negro);
+  color: var(--amarillo);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn-dark:hover { background: #1a1a1a; transform: translateY(-2px); }
+
+/* ─── FORMULARIO FINAL ─────────────────────── */
+#formulario {
+  padding: 100px 0;
+  background: var(--gris-oscuro);
+  scroll-margin-top: 70px;
+}
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.form-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.form-left h2 span { color: var(--amarillo); }
+.form-left > p {
+  font-size: 17px;
+  color: rgba(245,244,240,0.65);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.guarantees { display: flex; flex-direction: column; gap: 16px; }
+.guarantee-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.guarantee-icon {
+  width: 38px; height: 38px;
+  background: rgba(245,194,0,0.1);
+  border: 1px solid rgba(245,194,0,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.guarantee-item strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blanco);
+  margin-bottom: 4px;
+}
+.guarantee-item p {
+  font-size: 13px;
+  color: rgba(245,244,240,0.5);
+  line-height: 1.5;
+}
+.form-right {
+  background: var(--negro);
+  padding: 44px;
+}
+.form-right-header {
+  margin-bottom: 32px;
+}
+.form-right-header h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+.form-right-header p {
+  font-size: 14px;
+  color: var(--gris-claro);
+  line-height: 1.5;
+}
+.form-right-header p strong { color: var(--amarillo); }
+.form-group {
+  margin-bottom: 14px;
+}
+.form-group label {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,244,240,0.5);
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  padding: 14px 16px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  color: var(--blanco);
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.form-group select option { background: var(--gris-oscuro); }
+.form-group input::placeholder { color: rgba(245,244,240,0.25); }
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--amarillo);
+}
+.urgency-note {
+  background: rgba(217,79,61,0.1);
+  border: 1px solid rgba(217,79,61,0.25);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: rgba(245,244,240,0.7);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.urgency-note::before { content: '⚠'; flex-shrink: 0; color: var(--rojo-urgencia); }
+
+/* ─── CIERRE / FOOTER ─────────────────────── */
+#cierre {
+  padding: 100px 0;
+  background: var(--negro);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cierre::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(245,194,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cierre-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rojo-urgencia);
+  margin-bottom: 24px;
+}
+#cierre h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 0.95;
+  margin-bottom: 24px;
+  color: var(--blanco);
+  position: relative;
+}
+#cierre h2 span { color: var(--amarillo); }
+#cierre p {
+  font-size: 18px;
+  color: rgba(245,244,240,0.6);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  position: relative;
+}
+.cierre-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.scarcity-note {
+  margin-top: 28px;
+  font-size: 12px;
+  color: rgba(245,244,240,0.3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  position: relative;
+}
+.scarcity-note span { color: var(--rojo-urgencia); font-weight: 700; }
+footer {
+  background: #060606;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 36px 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: rgba(245,244,240,0.3);
+}
+.footer-logo span { color: var(--amarillo); opacity: 0.5; }
+.footer-legal {
+  font-size: 12px;
+  color: rgba(245,244,240,0.2);
+  line-height: 1.6;
+  text-align: right;
+  max-width: 400px;
+}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-diagonal { display: none; }
+  .usp-grid { grid-template-columns: 1fr; gap: 48px; }
+  .segment-panel { grid-template-columns: 1fr; }
+  .segment-right { border-left: none; border-top: 1px solid var(--gris-medio); }
+  .lead-magnet-inner { grid-template-columns: 1fr; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .proof-numbers { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .casos-grid { grid-template-columns: 1fr; }
+  .proceso-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .proceso-steps::before { display: none; }
+  .form-layout { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-legal { text-align: center; max-width: 100%; }
+}
+
+/* ─── ANIMATIONS ─────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo">BERMÚDEZ <span>CONSTRUCTORES</span></div>
+      <a href="#formulario" class="nav-cta">Hablar con un Experto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-diagonal"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-eyebrow">25 Años · 261 Proyectos · Bogotá & La Sabana</div>
+        <h1>
+          Construimos,<br>
+          Legalizamos<br>
+          <em>y Financiamos</em>
+        </h1>
+        <p class="hero-sub">
+          <strong>El único integrador industrial</strong> que diseña su planta, sanea su predio y financia la obra al <strong>0% de interés</strong> — sin bancos, sin filas en curadurías, sin intermediarios.
+        </p>
+        <div>
+          <a href="#formulario" class="btn-primary">Agenda tu Diagnóstico Gratuito</a>
+          <a href="#segmentos" class="btn-ghost">Ver Soluciones</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">261</div>
+            <div class="stat-label">Proyectos Ejecutados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">25</div>
+            <div class="stat-label">Años de Experiencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">Interés Directo</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="profile-selector">
+          <h3>¿Cuál es su situación?</h3>
+          <a href="#segmentos" class="profile-card" onclick="setTab('bts')">
+            <div class="profile-card-header">
+              <div class="profile-icon">🏭</div>
+              <div>
+                <h4>Necesito expandir mi operación</h4>
+                <div class="urgency-badge" style="display:inline-block;margin-top:4px;">Alta urgencia</div>
+              </div>
+            </div>
+            <p>Director de Operaciones / CFO que necesita una bodega o planta a la medida sin comprometer el flujo de caja.</p>
+          </a>
+          <a href="#segmentos" class="profile-card" onclick="setTab('legal')">
+            <div class="profile-card-header">
+              <div class="profile-icon">⚖️</div>
+              <div>
+                <h4>Mi predio tiene problemas legales</h4>
+                <div class="urgency-badge" style="display:inline-block;margin-top:4px;background:#D94F3D;">Urgencia máxima</div>
+              </div>
+            </div>
+            <p>Propietario con multa, querella o proceso sancionatorio abierto que necesita legalizar su propiedad hoy.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BANDA DE DOLOR ─── -->
+<div id="dolor-band">
+  <div class="marquee-track">
+    <span class="marquee-item">VACANCIA DE BODEGAS &lt; 2% EN LA SABANA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">MULTAS HASTA 200 SMLV POR CONSTRUCCIÓN SIN LICENCIA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">LOS BANCOS DESTRUYEN SU FLUJO DE CAJA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">RIESGO REAL DE DEMOLICIÓN FORZADA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">NO HAY BODEGAS CLASE A+ DISPONIBLES PARA ARRENDAR</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">VACANCIA DE BODEGAS &lt; 2% EN LA SABANA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">MULTAS HASTA 200 SMLV POR CONSTRUCCIÓN SIN LICENCIA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">LOS BANCOS DESTRUYEN SU FLUJO DE CAJA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">RIESGO REAL DE DEMOLICIÓN FORZADA</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">NO HAY BODEGAS CLASE A+ DISPONIBLES PARA ARRENDAR</span>
+    <span class="marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- ─── USP / DIFERENCIADOR ─── -->
+<section id="usp">
+  <div class="container">
+    <div class="usp-grid">
+      <div class="usp-left fade-up">
+        <div class="tag">Nuestro Diferencial</div>
+        <h2 class="section-title">El Integrador<br><em>Maestro</em></h2>
+        <p>Mientras que todos los demás le venden una pieza del rompecabezas, Bermúdez Constructores es el único en Colombia que reúne bajo un mismo techo los tres elementos que bloquean el desarrollo industrial de su empresa:</p>
+        <p>El músculo constructor, el blindaje legal y la financiación directa al 0%. Sin intermediarios. Sin coordinación entre proveedores. Sin sorpresas.</p>
+        <div class="usp-comparison" style="margin-top:30px;">
+          <div class="compare-row">
+            <div class="compare-bad">El abogado sin ingeniero</div>
+            <div class="compare-vs">VS</div>
+            <div class="compare-good">Bermúdez: Jurídico + Técnico</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-bad">Banco con tasas usureras</div>
+            <div class="compare-vs">VS</div>
+            <div class="compare-good">Financiación directa al 0%</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-bad">3 proveedores que no se hablan</div>
+            <div class="compare-vs">VS</div>
+            <div class="compare-good">Un solo responsable total</div>
+          </div>
+        </div>
+      </div>
+      <div class="usp-right fade-up">
+        <div class="usp-card">
+          <h4>🏗️ Construcción Industrial</h4>
+          <p>Bodegas, plantas y centros de distribución clase A+ diseñados y construidos bajo NSR-10 por nuestro equipo técnico interno. Sin subcontratistas misteriosos.</p>
+        </div>
+        <div class="usp-card">
+          <h4>⚖️ Saneamiento Legal Integral</h4>
+          <p>Departamento jurídico-técnico propio que gestiona querellas, licencias ante curaduría y mitigación estructural requerida por la norma. Abogados que entienden de vigas y columnas.</p>
+        </div>
+        <div class="usp-card">
+          <h4>💰 Financiación Directa 0%</h4>
+          <p>Fondeamos la obra con nuestro propio capital. Su empresa paga en cuotas sin intereses. Su flujo de caja operativo permanece 100% intacto durante toda la construcción.</p>
+        </div>
+        <div class="usp-card">
+          <h4>🏆 Trayectoria Demostrable</h4>
+          <p>25 años. 261 proyectos. Clientes ancla como Ramo y Compensar lo avalan. Cuando los novatos quiebran en la curaduría, nosotros llevamos décadas dictando las reglas del juego.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SEGMENTOS ─── -->
+<section id="segmentos">
+  <div class="container">
+    <div class="segmentos-intro fade-up">
+      <div class="tag">Soluciones por Perfil</div>
+      <h2 class="section-title">Seleccione <em>Su Situación</em></h2>
+      <p class="section-sub">Dos perfiles. Dos dolores distintos. Una sola empresa capaz de resolver ambos con la misma garantía y la misma obsesión por resultados.</p>
+    </div>
+    <div class="segmentos-tabs">
+      <button class="tab-btn active" onclick="switchTab('bts', this)">
+        <span class="tab-icon">🏭</span> Expansión Industrial (BTS)
+      </button>
+      <button class="tab-btn" onclick="switchTab('legal', this)">
+        <span class="tab-icon">⚖️</span> Legalización de Predios
+      </button>
+    </div>
+    <!-- TAB BTS -->
+    <div class="tab-content active" id="tab-bts">
+      <div class="segment-panel">
+        <div class="segment-left">
+          <div class="tag acero">Para: Director de Operaciones / CFO</div>
+          <div class="segment-title">Expansión <span>Cero Fricción</span> Bancaria</div>
+          <div class="segment-tagline">Build to Suit · Financiación al 0% · Llave en Mano</div>
+          <p style="font-size:15px;color:rgba(245,244,240,0.65);margin-bottom:24px;line-height:1.7;">Usted necesita una bodega o planta industrial a la medida. El mercado no tiene inventario disponible (vacancia menor al 2%). El banco le exige pignoraciones que destruyen su patrimonio. Nosotros le ofrecemos la única salida real.</p>
+          <p style="font-size:15px;color:rgba(245,244,240,0.65);margin-bottom:28px;line-height:1.7;font-weight:600;color:rgba(245,244,240,0.85);">¿Le suena familiar alguno de estos dolores?</p>
+          <ul class="pain-list">
+            <li>Los camiones hacen fila en la calle porque no cabe más inventario en la bodega actual</li>
+            <li>Necesita expandirse, pero el banco le pide garantías que comprometen todo su patrimonio</li>
+            <li>No encuentra bodegas Clase A+ disponibles en la Sabana con las especificaciones técnicas que necesita</li>
+            <li>La operación logística está afectando directamente sus ventas y su reputación con clientes</li>
+            <li>No quiere endeudar a la empresa en un crédito constructor a tasas del 18–22% anual</li>
+          </ul>
+        </div>
+        <div class="segment-right">
+          <div class="segment-highlight">
+            <p>"Construimos su nueva sede o centro de distribución en la Sabana. Nosotros financiamos el 100% de la obra al 0% de interés directo. Su capital de trabajo no se toca."</p>
+            <strong>— Promesa Bermúdez Constructores</strong>
+          </div>
+          <p style="font-size:14px;color:rgba(245,244,240,0.6);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;">Lo que obtiene con nosotros:</p>
+          <ul class="benefit-list">
+            <li>Bodega o planta diseñada exactamente a sus especificaciones técnicas (altura libre, resistencia de placa, muelles deprimidos)</li>
+            <li>Financiación directa al <strong>0% de interés</strong> — sin banco, sin comités de crédito, sin espera</li>
+            <li>Gestión completa de licencias ante curaduría urbana — usted no hace filas</li>
+            <li>Penalidad contractual si hay retrasos: si nos atrasamos, usted paga menos</li>
+            <li>Un solo contrato, un solo responsable: diseño, licencias, obra y financiación</li>
+            <li>Capital de trabajo empresarial 100% intacto durante toda la construcción</li>
+          </ul>
+          <a href="#formulario" class="btn-primary" style="margin-top:8px;">Solicitar Modelo Financiero Gratuito</a>
+        </div>
+      </div>
+    </div>
+    <!-- TAB LEGAL -->
+    <div class="tab-content" id="tab-legal">
+      <div class="segment-panel">
+        <div class="segment-left">
+          <div class="tag rojo">Para: Propietario con Proceso Sancionatorio</div>
+          <div class="segment-title">Saneamiento <span>Urbano Integral</span></div>
+          <div class="segment-tagline">Blindaje Patrimonial 360° · Defensa Legal + Técnica</div>
+          <p style="font-size:15px;color:rgba(245,244,240,0.65);margin-bottom:24px;line-height:1.7;">Recibió una visita del inspector de policía. Tiene un expediente sancionatorio abierto en la curaduría. Las multas por construir sin licencia en Bogotá llegan a los 200 SMLV, más el riesgo de demolición forzada. Usted necesita actuar hoy.</p>
+          <p style="font-size:15px;color:rgba(245,244,240,0.65);margin-bottom:28px;line-height:1.7;font-weight:600;color:rgba(245,244,240,0.85);">¿Está enfrentando alguna de estas situaciones?</p>
+          <ul class="pain-list">
+            <li>Tiene una notificación, querella o proceso sancionatorio activo por parte de la alcaldía o curaduría</li>
+            <li>Su propiedad fue construida, ampliada o modificada sin la licencia correspondiente</li>
+            <li>El abogado dilata el proceso, pero la curaduría exige estudios técnicos que él no puede hacer</li>
+            <li>No puede vender, hipotecar o arrendar la propiedad porque está fuera de norma</li>
+            <li>Teme que la multa o la demolición destruyan el patrimonio de toda su familia</li>
+          </ul>
+        </div>
+        <div class="segment-right">
+          <div class="segment-highlight" style="border-left-color:var(--rojo-urgencia);background:rgba(217,79,61,0.07);">
+            <p style="color:#ef8f83;">"Rescatamos su patrimonio. Asumimos la defensa legal de su expediente Y ejecutamos la mitigación estructural para que la curaduría avale el 100% de su propiedad. Un solo equipo, un solo responsable."</p>
+            <strong>— Promesa Bermúdez Constructores</strong>
+          </div>
+          <p style="font-size:14px;color:rgba(245,244,240,0.6);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;">Lo que obtiene con nosotros:</p>
+          <ul class="benefit-list">
+            <li>Auditoría técnico-jurídica de su predio en 48 horas — sabe exactamente en qué estado está</li>
+            <li>Equipo combinado: abogados urbanistas + ingenieros estructurales bajo el mismo techo</li>
+            <li>Gestión completa del expediente ante curaduría y alcaldía local — sin filas, sin vueltas</li>
+            <li>Diseño y ejecución de los refuerzos estructurales exigidos por NSR-10</li>
+            <li>Resolución de legalización sellada y firmada por la curaduría urbana</li>
+            <li>Propiedad 100% legal, transable y libre de gravámenes sancionatorios</li>
+          </ul>
+          <a href="#formulario" class="btn-primary" style="margin-top:8px;background:var(--rojo-urgencia);">Frenar Mi Proceso Sancionatorio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEAD MAGNET ─── -->
+<section id="lead-magnet">
+  <div class="container">
+    <div class="lead-magnet-inner">
+      <div class="lm-left">
+        <div class="tag" style="background:var(--negro);color:var(--amarillo);">Oferta Gratuita — Sin Compromiso</div>
+        <h2>Diagnóstico Express<br>en 48 Horas</h2>
+        <p>¿No sabe por dónde empezar? En 48 horas le decimos exactamente cuál es su situación legal y financiera, qué ruta debe seguir y cuánto le costaría resolverlo. Sin costos, sin letras pequeñas.</p>
+        <ul class="lm-includes">
+          <li>Revisión de su situación actual (legal o de expansión)</li>
+          <li>Identificación de los riesgos reales a los que está expuesto</li>
+          <li>Ruta crítica de solución paso a paso</li>
+          <li>Estimado preliminar de inversión (sin compromiso)</li>
+          <li>Respuesta directa de un experto — no un asesor de ventas</li>
+        </ul>
+      </div>
+      <div class="lm-form">
+        <h3>Solicite su Diagnóstico</h3>
+        <p>Respuesta garantizada en <strong style="color:var(--amarillo);">menos de 48 horas hábiles</strong></p>
+        <div class="form-field">
+          <input type="text" placeholder="Su nombre completo">
+        </div>
+        <div class="form-field">
+          <input type="email" placeholder="Correo electrónico corporativo">
+        </div>
+        <div class="form-field">
+          <input type="tel" placeholder="Teléfono / WhatsApp">
+        </div>
+        <div class="form-field">
+          <select>
+            <option value="" disabled selected>¿Cuál es su situación?</option>
+            <option>Necesito expandir mi operación industrial</option>
+            <option>Tengo un proceso legal o sancionatorio</option>
+            <option>Tengo un lote sin desarrollar</option>
+            <option>Quiero invertir en proyectos industriales</option>
+          </select>
+        </div>
+        <button class="btn-submit">Solicitar Diagnóstico Gratuito →</button>
+        <p class="form-guarantee">🔒 Sus datos son confidenciales y nunca serán compartidos con terceros. Sin spam, sin llamadas no solicitadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICIOS ─── -->
+<section id="servicios">
+  <div class="container">
+    <div class="servicios-header fade-up">
+      <div class="tag">Portafolio de Soluciones</div>
+      <h2 class="section-title">Nuestras <em>Tres Ofertas</em> de Combate</h2>
+      <p class="section-sub" style="margin:0 auto;">Cada solución está diseñada para atacar directamente el dolor del cliente, no para impresionar en un brochure corporativo.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card fade-up">
+        <div class="servicio-num">01</div>
+        <div class="servicio-icon">🏗️</div>
+        <h3>Desarrollo Industrial Cero Fricción Bancaria</h3>
+        <p>Construimos su bodega o planta a la medida y financiamos el 100% de la obra directamente al 0% de interés. Su empresa opera, crece y paga en cuotas como si fuera un arriendo — sin banco de por medio.</p>
+        <ul class="servicio-bullets">
+          <li>Diseño técnico personalizado (altura libre, muelles, carga de piso)</li>
+          <li>Radicación y gestión de licencias urbanísticas</li>
+          <li>Construcción bajo NSR-10 con control de calidad total</li>
+          <li>Entrega llave en mano con penalidad por demora</li>
+          <li>Financiación directa al 0% — sin garantes bancarios</li>
+        </ul>
+      </div>
+      <div class="servicio-card urgente fade-up">
+        <div class="servicio-num">02</div>
+        <div class="servicio-icon">⚖️</div>
+        <h3>Saneamiento Urbano Integral</h3>
+        <p>Rescate jurídico-técnico para propiedades con procesos sancionatorios. Nuestro equipo combina abogados urbanistas e ingenieros estructurales bajo el mismo techo. El único integrador que litiga y construye.</p>
+        <ul class="servicio-bullets">
+          <li>Auditoría técnico-jurídica en 48 horas</li>
+          <li>Representación legal ante curaduría y alcaldía</li>
+          <li>Estudios de vulnerabilidad sísmica NSR-10</li>
+          <li>Ejecución de mitigaciones estructurales exigidas por ley</li>
+          <li>Resolución oficial de legalización — 100% del predio</li>
+        </ul>
+      </div>
+      <div class="servicio-card fade-up">
+        <div class="servicio-num">03</div>
+        <div class="servicio-icon">🌱</div>
+        <h3>Activación de Tierras (Permuta Inteligente)</h3>
+        <p>¿Tiene un lote industrial inactivo pagando predial sin generar renta? Nosotros aportamos el 100% del capital y el know-how para desarrollarlo. Usted recibe rentas B2B de largo plazo por su participación.</p>
+        <ul class="servicio-bullets">
+          <li>Estructuración fiduciaria blindada — su tierra nunca entra a nuestro balance</li>
+          <li>Bermúdez financia el 100% de la obra y consecución de inquilinos</li>
+          <li>Contratos de arrendamiento corporativo a largo plazo (NNN)</li>
+          <li>Rentas mensuales distribuidas directamente por la fiduciaria</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESO ─── -->
+<section id="proceso">
+  <div class="container">
+    <div class="proceso-header fade-up">
+      <div class="tag">Ruta de Trabajo</div>
+      <h2 class="section-title">¿Cómo <em>Funciona</em>?</h2>
+      <p class="section-sub" style="margin:0 auto;">Sin burocracia interna. Sin comités interminables. Desde el diagnóstico hasta la entrega operativa, usted sabe exactamente qué pasa en cada paso.</p>
+    </div>
+    <div style="display:flex;justify-content:center;gap:0;margin-bottom:48px;">
+      <button class="proceso-tab active" onclick="switchProceso('bts-proceso', this)">🏭 Expansión BTS</button>
+      <button class="proceso-tab" onclick="switchProceso('legal-proceso', this)">⚖️ Legalización</button>
+    </div>
+    <div class="proceso-content active" id="bts-proceso">
+      <div class="proceso-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Diagnóstico Financiero</h4>
+          <p>Reunión técnica donde modelamos el esquema BTS: metros, especificaciones, cronograma y plan de pagos sin banco.</p>
+          <div class="step-time">Semana 1</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Diseño y Licencias</h4>
+          <p>Nuestro equipo técnico elabora los planos y radica la licencia ante la curaduría. Usted no pisa una cola.</p>
+          <div class="step-time">Semanas 2–8</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Construcción y Control</h4>
+          <p>Ejecución de obra con cronograma público. Si nos atrasamos, hay penalidad. Si cumplimos, hay celebración.</p>
+          <div class="step-time">Meses 2–8</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Entrega y Pago en Cuotas</h4>
+          <p>Recibe la planta operativa llave en mano y comienza a pagar en cuotas mensuales sin intereses.</p>
+          <div class="step-time">Mes 8 en adelante</div>
+        </div>
+      </div>
+    </div>
+    <div class="proceso-content" id="legal-proceso">
+      <div class="proceso-steps">
+        <div class="step urgente">
+          <div class="step-num">1</div>
+          <h4>Auditoría Express</h4>
+          <p>En 48 horas revisamos su expediente, el estado del proceso sancionatorio y los riesgos reales de multa o demolición.</p>
+          <div class="step-time">48 Horas</div>
+        </div>
+        <div class="step urgente">
+          <div class="step-num">2</div>
+          <h4>Defensa Legal</h4>
+          <p>Nuestros abogados urbanistas toman el expediente, notifican a la curaduría y bloquean el avance del proceso sancionatorio.</p>
+          <div class="step-time">Semanas 1–4</div>
+        </div>
+        <div class="step urgente">
+          <div class="step-num">3</div>
+          <h4>Mitigación Técnica</h4>
+          <p>Elaboramos los estudios de vulnerabilidad sísmica NSR-10 y ejecutamos las obras de adecuación estructural exigidas por ley.</p>
+          <div class="step-time">Semanas 4–14</div>
+        </div>
+        <div class="step urgente">
+          <div class="step-num">4</div>
+          <h4>Resolución Definitiva</h4>
+          <p>Obtenemos la resolución de legalización sellada por la curaduría. Su predio queda 100% legal, transable e hipotecable.</p>
+          <div class="step-time">90 Días aprox.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRUEBA SOCIAL ─── -->
+<section id="social">
+  <div class="container">
+    <div class="social-header fade-up">
+      <div class="tag">Resultados Reales</div>
+      <h2 class="section-title">Números que <em>No Mienten</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Clientes que confiaron en nosotros cuando el banco les dijo que no, o cuando la alcaldía les dijo que estaban acabados.</p>
+    </div>
+    <div class="proof-numbers">
+      <div class="proof-num-card fade-up">
+        <div class="proof-num">261</div>
+        <div class="proof-desc">Proyectos Ejecutados</div>
+      </div>
+      <div class="proof-num-card fade-up">
+        <div class="proof-num">25+</div>
+        <div class="proof-desc">Años en el Mercado</div>
+      </div>
+      <div class="proof-num-card fade-up">
+        <div class="proof-num">0%</div>
+        <div class="proof-desc">Interés Financiación Directa</div>
+      </div>
+      <div class="proof-num-card fade-up">
+        <div class="proof-num">90</div>
+        <div class="proof-desc">Días Prom. Legalización</div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial fade-up">
+        <span class="quote-mark">"</span>
+        <p>Llevábamos 8 meses buscando financiación para nuestra nueva planta. El banco nos exigía pignoraciones que comprometían toda la empresa. Bermúdez nos presentó el esquema al 0% con un modelo de Excel en 20 minutos. Hoy tenemos la planta operando y el flujo de caja intacto.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <strong>Miguel R.</strong>
+            <span>Director de Operaciones — Empresa de Logística, Funza</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <span class="quote-mark">"</span>
+        <p>La alcaldía nos había dado 30 días para presentar el plan de regularización o enfrentábamos demolición. El abogado anterior dilató 6 meses sin resultados. Bermúdez tomó el caso, sacó los estudios estructurales y cerró el expediente ante la curaduría en menos de 90 días. Salvaron mi patrimonio.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CG</div>
+          <div class="author-info">
+            <strong>Carlos G.</strong>
+            <span>Propietario de Bodega Comercial — Bogotá</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="client-logos">
+      <div class="client-logo">COMPENSAR</div>
+      <div class="client-logo">RAMO</div>
+      <div class="client-logo">LOGÍSTICA COL.</div>
+      <div class="client-logo">INDUSTRIAS DEL NORTE</div>
+      <div class="client-logo">GRUPO EMPRESARIAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CASOS DE ÉXITO ─── -->
+<section id="casos">
+  <div class="container">
+    <div class="casos-header fade-up">
+      <div class="tag">Casos de Éxito</div>
+      <h2 class="section-title">Proyectos <em>Ejecutados</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Resultados reales de clientes que decidieron no seguir esperando.</p>
+    </div>
+    <div class="casos-grid">
+      <div class="caso-card fade-up">
+        <div class="caso-tag">Build to Suit · Sabana Occidente</div>
+        <h3>Centro Logístico Mosquera</h3>
+        <div class="caso-metric">
+          <div class="metric-row"><span class="metric-label">Área construida</span><span class="metric-value">8.400 m²</span></div>
+          <div class="metric-row"><span class="metric-label">Financiación</span><span class="metric-value">0% interés — 100% Bermúdez</span></div>
+          <div class="metric-row"><span class="metric-label">Tiempo de entrega</span><span class="metric-value">7 meses</span></div>
+          <div class="metric-row"><span class="metric-label">Ahorro vs banco</span><span class="metric-value">~$680M en intereses</span></div>
+        </div>
+        <div class="caso-result">Empresa logística duplicó su capacidad de despacho sin afectar su capital de trabajo. Inició operaciones el mismo mes de entrega.</div>
+      </div>
+      <div class="caso-card rojo fade-up">
+        <div class="caso-tag">Legalización · Bodega Comercial · Bogotá</div>
+        <h3>Rescate Patrimonial Urgente</h3>
+        <div class="caso-metric">
+          <div class="metric-row"><span class="metric-label">Multa en riesgo</span><span class="metric-value">$320M COP</span></div>
+          <div class="metric-row"><span class="metric-label">Tiempo de resolución</span><span class="metric-value">78 días hábiles</span></div>
+          <div class="metric-row"><span class="metric-label">Estado del predio hoy</span><span class="metric-value">100% Legal</span></div>
+          <div class="metric-row"><span class="metric-label">Expediente sancionatorio</span><span class="metric-value">Archivado</span></div>
+        </div>
+        <div class="caso-result" style="border-left-color:var(--rojo-urgencia);background:rgba(217,79,61,0.07);">Propietario había contratado dos abogados anteriores sin resultado. Bermúdez cerró el caso en 78 días. El predio hoy es transable e hipotecable.</div>
+      </div>
+      <div class="caso-card fade-up">
+        <div class="caso-tag">Activación de Tierras · Sabana Norte</div>
+        <h3>Parque Industrial Tocancipá</h3>
+        <div class="caso-metric">
+          <div class="metric-row"><span class="metric-label">Área del lote</span><span class="metric-value">22.000 m²</span></div>
+          <div class="metric-row"><span class="metric-label">Inversión propietario</span><span class="metric-value">$0 COP</span></div>
+          <div class="metric-row"><span class="metric-label">Financiación Bermúdez</span><span class="metric-value">100% de la obra</span></div>
+          <div class="metric-row"><span class="metric-label">Renta mensual propietario</span><span class="metric-value">Activa desde mes 9</span></div>
+        </div>
+        <div class="caso-result">Familia propietaria del lote recibe renta mensual B2B de una empresa multinacional. Pasó de pagar predial a recibir rentas de por vida.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA INTERMEDIO ─── -->
+<section id="cta-mid">
+  <h2>¿Sigue esperando<br>que el banco le diga que sí?</h2>
+  <p>Bermúdez Constructores tiene el capital, el equipo legal y el músculo técnico para resolver hoy lo que el mercado no puede darle.</p>
+  <a href="#formulario" class="btn-dark">Quiero mi Diagnóstico Gratuito →</a>
+</section>
+
+<!-- ─── FORMULARIO FINAL ─── -->
+<section id="formulario">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-left fade-up">
+        <div class="tag">Último Paso</div>
+        <h2>Hable con un<br><span>Experto Real</span><br>Hoy</h2>
+        <p>No un asesor de ventas. No un chatbot. Un ingeniero o abogado especializado que revisa su caso y le dice exactamente qué hacer — en menos de 48 horas.</p>
+        <div class="guarantees">
+          <div class="guarantee-item">
+            <div class="guarantee-icon">⚡</div>
+            <div>
+              <strong>Respuesta en 48 horas hábiles</strong>
+              <p>Desde que llena el formulario hasta la llamada de diagnóstico. Sin esperas indefinidas.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">🔒</div>
+            <div>
+              <strong>Confidencialidad total</strong>
+              <p>La información de su predio o empresa es tratada con reserva absoluta. No compartimos datos con terceros.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">💯</div>
+            <div>
+              <strong>Sin compromiso de compra</strong>
+              <p>El diagnóstico es gratuito. Si no somos la solución correcta para su caso, se lo decimos con honestidad.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-icon">📋</div>
+            <div>
+              <strong>25 años resolviendo casos como el suyo</strong>
+              <p>261 proyectos ejecutados nos dan la experiencia para saber en minutos qué necesita y cómo lograrlo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-right fade-up">
+        <div class="form-right-header">
+          <h3>Solicite su Diagnóstico Gratuito</h3>
+          <p>Nuestro equipo se contactará con usted en <strong>menos de 48 horas hábiles</strong> con un análisis claro de su situación.</p>
+        </div>
+        <div class="urgency-note">
+          Si tiene un proceso sancionatorio activo, llene el formulario ahora. Los plazos procesales siguen corriendo mientras espera.
+        </div>
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" placeholder="Ej: Jorge Ramírez">
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="correo@empresa.com">
+        </div>
+        <div class="form-group">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" placeholder="+57 300 000 0000">
+        </div>
+        <div class="form-group">
+          <label>¿Cuál es su situación?</label>
+          <select>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option>Necesito expandir mi bodega o planta industrial</option>
+            <option>Tengo un proceso legal o sancionatorio activo</option>
+            <option>Tengo un lote industrial sin desarrollar</option>
+            <option>Quiero construir una bodega en mi lote</option>
+            <option>Quiero invertir en proyectos logísticos</option>
+          </select>
+        </div>
+        <button class="btn-submit">Solicitar Diagnóstico Gratuito — Sin Costo →</button>
+        <p class="form-guarantee">🔒 Sus datos son confidenciales. Sin spam. Sin llamadas no solicitadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CIERRE ─── -->
+<section id="cierre">
+  <div class="container">
+    <div class="cierre-eyebrow">El tiempo corre — actúe hoy</div>
+    <h2>Su competencia ya<br>está <span>expandiéndose</span>.<br>¿Y usted?</h2>
+    <p>La vacancia de bodegas industriales en la Sabana es menor al 2%. Los plazos sancionatorios no esperan. Cada día sin actuar es un día que se acumula en costos, riesgos y oportunidades perdidas.</p>
+    <div class="cierre-btns">
+      <a href="#formulario" class="btn-primary" style="font-size:16px;padding:20px 40px;">Agenda tu Diagnóstico Gratuito →</a>
+    </div>
+    <p class="scarcity-note">Bermúdez Constructores atiende un número limitado de proyectos nuevos por trimestre — <span>cupos disponibles: limitados para Q2 2026</span></p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">BERMÚDEZ <span>CONSTRUCTORES</span></div>
+      <div class="footer-legal">
+        Bermúdez Constructores e Inmobiliaria SAS · NIT Colombia<br>
+        Bogotá & La Sabana · Medellín y Valle de Aburrá<br>
+        <a href="https://www.bermudezconstructores.com" style="color:rgba(245,194,0,0.4);text-decoration:none;">www.bermudezconstructores.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching - Segmentos
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Tab switching - Proceso
+function switchProceso(tabId, btn) {
+  document.querySelectorAll('.proceso-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.proceso-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Set tab from hero profile cards
+function setTab(tab) {
+  setTimeout(() => {
+    const btn = document.querySelector(`.tab-btn[onclick*="${tab}"]`);
+    if (btn) switchTab(tab, btn);
+  }, 100);
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Stagger fade-up children
+document.querySelectorAll('.proof-num-card, .servicio-card, .caso-card').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   SOVEREIGN BLUEPRINT DESIGN SYSTEM
+   Design Tokens — Nunca hardcodear estos valores
+   ======================================== */
+
+:root {
+  /* Palette - Material Design Tokens */
+  --surface:                  #111317;    /* Background principal - Obsidian Navy */
+  --surface-dim:              #111317;    /* Surface Dim */
+  --surface-container-lowest: #0c0e11;    /* Nivel más bajo */
+  --surface-container-low:    #1a1c1f;    /* Nivel bajo - Secciones secundarias */
+  --surface-container:        #1e2024;    /* Container base */
+  --surface-container-high:   #282a2e;    /* Cards, zonas interactivas */
+  --surface-container-highest:#333538;    /* Nivel más alto */
+
+  --primary:                  #e9c176;    /* Gold/Brass - CTAs de alto impacto */
+  --primary-container:        #c5a059;    /* Gold Container - Para gradientes */
+  --secondary:                #bfc7d7;    /* Cool Slate - Puente visual */
+  --on-surface:               #e2e2e6;    /* Texto principal - Off-white legible */
+  --on-primary:               #111317;    /* Texto sobre primary */
+
+  --outline-variant:          #4e4639;    /* Bordes fantasma (15% opacity) */
+
+  /* Typography */
+  --font-display:             'Space Grotesk', sans-serif;  /* Headlines - Arquitectónico */
+  --font-body:                'Manrope', sans-serif;         /* Body - Geométrico premium */
+
+  /* Spacing */
+  --spacing-8:                2.75rem;    /* Separación interna de cards (sin dividers) */
+
+  /* Effects */
+  --backdrop-blur:            40px;       /* Glassmorphism */
+  --transition-base:          0.2s ease;
+  --transition-slow:          0.6s ease;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   TYPOGRAPHY SCALE
+   ======================================== */
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.body-md {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.body-sm {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.label-md {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.label-sm {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ========================================
+   GLASSMORPHISM UTILITY
+   ======================================== */
+
+.glass {
+  background: rgba(26, 28, 31, 0.6);
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
+}
+
+/* Fallback para navegadores sin soporte */
+@supports not (backdrop-filter: blur(40px)) {
+  .glass {
+    background: var(--surface-container-low);
+  }
+}
+
+/* ========================================
+   GOLDEN GRADIENT UTILITY
+   ======================================== */
+
+.gradient-gold {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   TONAL LAYERING (Depth without shadows)
+   ======================================== */
+
+.layer-0 {
+  background: var(--surface);
+}
+
+.layer-1 {
+  background: var(--surface-container-low);
+}
+
+.layer-2 {
+  background: var(--surface-container-high);
+}
+
+/* ========================================
+   GHOST BORDER UTILITY
+   ======================================== */
+
+.ghost-border {
+  border: 1px solid rgba(78, 70, 57, 0.15); /* outline-variant at 15% */
+}
+
+.ghost-border-bottom {
+  border-bottom: 1px solid rgba(78, 70, 57, 0.15);
+}
+
+.ghost-border-top {
+  border-top: 1px solid rgba(78, 70, 57, 0.15);
+}
+
+/* ========================================
+   BLUEPRINT GRID PATTERN
+   ======================================== */
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(233, 193, 118, 0.03) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(233, 193, 118, 0.03) 0.5px, transparent 0.5px);
+  background-size: 60px 60px;
+}
+
+.blueprint-grid-dense {
+  background-image:
+    linear-gradient(rgba(233, 193, 118, 0.05) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(233, 193, 118, 0.05) 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+}
+
+/* ========================================
+   GOLD CABLE (Vertical guide lines)
+   ======================================== */
+
+.gold-cable {
+  position: relative;
+}
+
+.gold-cable::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 60px;
+  background: var(--primary);
+}
+
+/* ========================================
+   AMBIENT SHADOW (Only for floating modals)
+   ======================================== */
+
+.shadow-ambient {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-ambient-soft {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   INNER GLOW (Simula metal biselado en botones)
+   ======================================== */
+
+.inner-glow-gold {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   WATERMARK TEXT
+   ======================================== */
+
+.watermark {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 18vw, 18rem);
+  color: rgba(233, 193, 118, 0.03);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (max-width: 900px) {
+  :root {
+    --spacing-8: 2rem;
+  }
+
+  .display-lg {
+    line-height: 1;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
