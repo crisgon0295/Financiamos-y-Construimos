@@ -99,7 +99,7 @@ Editar `.env.local` con valores reales:
 #### WhatsApp (Opcional)
 Actualizar número en `components/ui/WhatsAppButton.tsx`:
 ```typescript
-phoneNumber = '+573001234567' // Reemplazar con número real
+phoneNumber = '+573223791505'
 ```
 
 ### 3. Ejecutar en desarrollo

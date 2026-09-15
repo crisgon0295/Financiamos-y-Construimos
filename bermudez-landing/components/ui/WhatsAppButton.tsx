@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = '+573001234567', // Reemplazar con número real de Bermúdez
+  phoneNumber = '+573223791505',
   defaultMessage = 'Hola, vi su página web y me interesa conocer más sobre sus servicios de construcción y financiación.',
   className = '',
 }: WhatsAppButtonProps) {

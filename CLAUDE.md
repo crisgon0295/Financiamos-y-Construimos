@@ -336,7 +336,7 @@ export async function POST(request: Request) {
 | A | Timestamp | 2026-03-28T14:32:00-05:00 |
 | B | Nombre | Jorge Ramírez |
 | C | Email | jorge@empresa.com |
-| D | Teléfono | +573001234567 |
+| D | Teléfono | +573223791505 |
 | E | Situación | expansion-bts |
 | F | Fuente UTM | google / cpc / bodega-funza |
 | G | IP País | CO |
